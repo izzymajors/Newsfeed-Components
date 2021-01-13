@@ -108,10 +108,15 @@ function articleMaker({data}){
   expandButton.addEventListener("click", event =>{
    expandButton.classList.toggle("article-open");
 
-  
+  return(data);
   })
 }
-console.log(articleMaker);
+
+const articleDiv = data.map((articleItem) => {
+  return articleMaker(articleItem);
+});
+console.log(articleDiv);
+
 /*
   Step 1: Write a component called 'articleMaker' to create an article.
   Your component is a function that takes an article object as its only argument,
